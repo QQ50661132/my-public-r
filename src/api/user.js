@@ -34,12 +34,20 @@ export function logout() {
     method: 'delete'
   })
 }
-export function userList(userName, roleId) {
-  console.log({ userName, roleId })
+
+export function userPage(userName, roleId, page, limit) {
   return request({
     url: process.env.VUE_APP_RE_API + '/user/page',
     method: 'get',
-    params: { userName, roleId, page: 1, limit: 99999 }
+    params: { userName, roleId, page, limit }
   })
+}
+
+export function save(user) {
+  return Promise.resolve({ msg: '成功', code: 200 })
+}
+
+export function update(user) {
+  return Promise.resolve({ msg: '成功', code: 200 })
 }
 
